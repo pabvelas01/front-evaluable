@@ -1,0 +1,64 @@
+<div class="row mt-2">
+    <div class="card col-lg-6 offset-3">
+        
+        <div class="card-body">
+            
+            <button class="btn btn-primary float-end">Crear Carrera</button>
+            <h4 class="card-title col-6 offset-4 mb-5 text-primary"><strong>Filtros de Búsqueda Carrera</strong>
+               
+            </h4>
+            <form class="col-lg-8 offset-2">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Alcance de Nombre Carrera</label>
+                    <input type="text" class="form-control form-control-sm" id="nombre" placeholder="">
+                  </div>
+                <div class="text-center">
+                  <button class="btn btn-primary btn-md  col-lg-5"><strong>Filtrar <i class="fa-solid fa-magnifying-glass"></i></strong></button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-8 offset-2 mt-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-primary"><strong>Resultados</strong></h5>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                          <th class="col-1" scope="col">#</th>
+                          <th class="col-6" scope="col">Carrera</th>
+                          <th scope="col">Nomenclatura</th>
+                          <th class="col-2 text-center" scope="col" >Acciones</th>
+                         
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th >1</th>
+                          <td>Ingenieria Civil en Informática</td>
+                          <td>ICinf</td>
+                          <td class="text-center"> 
+                                <button type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger m-1"><i class="fa-solid fa-trash"></i></button>
+                               
+                          </td>
+                         
+                        </tr>
+                       
+                      </tbody>
+                  </table>
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination  justify-content-center">
+                      <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                    </ul>
+                  </nav>
+
+            </div>
+        </div>
+    </div>
+</div>

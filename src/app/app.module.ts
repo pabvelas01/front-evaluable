@@ -7,6 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { ListarAlumnosComponent } from './components/listar-alumnos/listar-alumnos.component';
+import { MantenedorAlumnoComponent } from './components/mantenedor-alumno/mantenedor-alumno.component';
+import { MantenedorCarreraComponent } from './components/mantenedor-carrera/mantenedor-carrera.component';
+import { ListarCarrerasComponent } from './components/listar-carreras/listar-carreras.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { ListarAlumnosComponent } from './components/listar-alumnos/listar-alumn
     NavbarComponent,
     AdministradorComponent,
     ListarAlumnosComponent,
+    MantenedorAlumnoComponent,
+    MantenedorCarreraComponent,
+    ListarCarrerasComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@
         <div class="card col-lg-6 offset-3">
             
             <div class="card-body">
+                <button *ngIf="Editable==true" class="btn btn-primary float-end">Crear Alumno</button>
                 <h4 class="card-title text-center text-primary"><strong>Filtros de Búsqueda Alumno</strong></h4>
                 <form class="col-lg-8 offset-2">
                     <div class="mb-3">
@@ -36,6 +37,7 @@
                               <th scope="col">Apellido Materno</th>
                               <th scope="col">Carrera</th>
                               <th scope="col">Sexo</th>
+                              <th *ngIf="Editable===true" scope="col">Acciones</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -46,6 +48,7 @@
                               <td>Gonzalez</td>
                               <td>Ing Civil en Informática</td>
                               <td>Masculino</td>
+                              <td *ngIf="Editable===true">Masculino</td>
                             </tr>
                            
                           </tbody>

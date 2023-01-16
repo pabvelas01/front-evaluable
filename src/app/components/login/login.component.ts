@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    //this.autentificar();
+    if(localStorage.getItem("email")){
+      this.router.navigate(['/administrador']);
+    }
   }
 
   ingresar():void {
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
       data=>{
         console.log(data);
         this.toastr.success(data.msg, 'Éxito');
+        localStorage.email=email;
         this.router.navigate(['/administrador'])
       },
       error=>{

@@ -14,6 +14,8 @@ import {HttpClientModule}  from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AdministrarCarreraComponent } from './components/administrar-carrera/administrar-carrera.component';
+import { CarreraComponent } from './components/carrera/carrera.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MantenedorAlumnoComponent,
     MantenedorCarreraComponent,
     ListarCarrerasComponent,
+    AdministrarCarreraComponent,
+    CarreraComponent,
    
   ],
   imports: [

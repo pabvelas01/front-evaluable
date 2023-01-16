@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-carreras',
@@ -7,9 +8,10 @@ import { Component, OnInit ,Input } from '@angular/core';
 })
 export class ListarCarrerasComponent implements OnInit {
   @Input() Editable: boolean=false;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  
 }

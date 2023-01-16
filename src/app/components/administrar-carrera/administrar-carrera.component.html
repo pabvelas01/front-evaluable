@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-6 offset-lg-3 mt-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary text-start mb-5">Crear Carrera</h5>
+                    <form [formGroup]="administrarCarreraForm" (ngSubmit)="ingresarCarrera()">   
+                    <div class="form-floating mb-3">
+                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Nombre carrera">
+                        <label for="floatingInput">Nombre Carrera</label>
+                      </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Nomenclatura">
+                        <label for="floatingInput">Nomenclatura Carrera</label>
+                      </div>
+                     
+                      <button type="submit" routerLink="/mantenedor-carrera" class="btn btn-success btn-lg float-start" >Volver <i class="fa-solid fa-left-long"></i> </button>
+                      <button type="submit" class="btn btn-primary btn-lg float-end" >Guardar <i class="fa-solid fa-floppy-disk"></i> </button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

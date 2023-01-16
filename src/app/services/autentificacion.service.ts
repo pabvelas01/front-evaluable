@@ -21,6 +21,5 @@ export class AutentificacionService {
   // como es una peticion es un observable como las promise
   setAutentificar(): Observable <any> {
     return this.http.post(this.url_aws ,{email:this.email,password:this.password});
-    
   }
 }

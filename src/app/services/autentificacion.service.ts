@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AutentificacionService {
   url ="http://localhost:4000/api/autentificacion";
-  url_aws ="http://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/autentificacion";
+  url_aws ="https://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/autentificacion";
   email:string='';
   password:string='';  
   constructor(private http: HttpClient) { 

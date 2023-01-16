@@ -10,6 +10,11 @@ import { ListarAlumnosComponent } from './components/listar-alumnos/listar-alumn
 import { MantenedorAlumnoComponent } from './components/mantenedor-alumno/mantenedor-alumno.component';
 import { MantenedorCarreraComponent } from './components/mantenedor-carrera/mantenedor-carrera.component';
 import { ListarCarrerasComponent } from './components/listar-carreras/listar-carreras.component';
+import {HttpClientModule}  from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -21,10 +26,17 @@ import { ListarCarrerasComponent } from './components/listar-carreras/listar-car
     MantenedorAlumnoComponent,
     MantenedorCarreraComponent,
     ListarCarrerasComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    ReactiveFormsModule,
+   FormsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

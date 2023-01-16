@@ -4,16 +4,17 @@
             <div class="card">
                 <div class="card-body text-center">
                     <img class="card-img-top mb-3" src="https://www.iacc.cl/wp-content/uploads/2021/07/iacc-2.svg" alt="Card image cap">
-                       
+                    <form [formGroup]="autentificacionForm" (ngSubmit)="ingresar()">   
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Email</label>
                       </div>
                       <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Contraseña</label>
                       </div>
-                      <button class="btn btn-success btn-lg float-end" routerLink="/administrador">Ingresar</button>
+                      <button type="submit" class="btn btn-success btn-lg float-end" >Ingresar</button>
+                      </form>
                 </div>
             </div>
         </div>

@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdministrarCarreraComponent } from './components/administrar-carrera/administrar-carrera.component';
 import { CarreraComponent } from './components/carrera/carrera.component';
+import { AlumnoComponent } from './components/alumno/alumno.component';
+import { AdministarAlumnoComponent } from './components/administar-alumno/administar-alumno.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CarreraComponent } from './components/carrera/carrera.component';
     ListarCarrerasComponent,
     AdministrarCarreraComponent,
     CarreraComponent,
-   
+    AlumnoComponent,
+    AdministarAlumnoComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -6,8 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CarreraService {
-  url ="http://localhost:4000/api/carrera";
-  url_aws ="https://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/carrera";
+  url_local ="http://localhost:4000/api/carrera/";
+  url_aws ="https://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/carrera/";
+  url=this.url_aws;
   carrera:string='';
   nomenclatura:string='';  
   constructor(private http: HttpClient) { 
@@ -20,10 +21,14 @@ export class CarreraService {
     
   }
   setCarreraHttp(): Observable <any>{
-    return this.http.post(this.url_aws ,{carrera:this.carrera,nomenclatura:this.nomenclatura});
+    return this.http.post(this.url ,{carrera:this.carrera,nomenclatura:this.nomenclatura});
   }
   
   getCarreras(): Observable <any> {
-    return this.http.get(this.url_aws);
+    return this.http.get(this.url);
+  }
+
+  eliminarCarrera(id:any): Observable<any>{
+    return this.http.delete(this.url + id)
   }
 }

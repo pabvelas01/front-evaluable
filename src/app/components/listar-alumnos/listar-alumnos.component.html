@@ -28,36 +28,37 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title text-primary"><strong>Resultados</strong></h5>
-                    <table class="table table-success table-striped">
+                    <table *ngIf="listAlumno.length>0"  class="table table-success table-striped">
                         <thead>
                             <tr>
                               <th scope="col">#</th>
-                              <th scope="col">Nombre</th>
-                              <th scope="col">Apellido Paterno</th>
-                              <th scope="col">Apellido Materno</th>
+                              <th scope="col">Nombres</th>
+                              <th scope="col">Primer Apellido</th>
+                              <th scope="col">Segundo Apellido</th>
                               <th scope="col">Carrera</th>
                               <th scope="col">Sexo</th>
                               <th class="text-center" *ngIf="Editable===true" scope="col">Acciones</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <th >1</th>
-                              <td>pablo</td>
-                              <td>Velasquez</td>
-                              <td>Gonzalez</td>
-                              <td>Ing Civil en Informática</td>
-                              <td>Masculino</td>
+                            <tr *ngFor="let alumno of listAlumno;let i=index">
+                              <td>{{i+1}}</td>
+                              <td>{{alumno.nombre}}</td>
+                              <td>{{alumno.primer_apellido}}</td>
+                              <td>{{alumno.segundo_apellido}}</td>
+                              <td>{{alumno.carrera}}</td>
+                              <td>{{alumno.sexo}}</td>
                               <td *ngIf="Editable===true" class="text-center"> 
                                 <button type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button type="button" class="btn btn-sm btn-danger m-1"><i class="fa-solid fa-trash"></i></button>
+                                <button type="button" (click)="eliminarAlumno(alumno._id)" class="btn btn-sm btn-danger m-1"><i class="fa-solid fa-trash"></i></button>
                                
                                 </td>
                             </tr>
                            
                           </tbody>
                       </table>
-                      <nav aria-label="Page navigation example">
+                      <h5 class="text-align-center" *ngIf="listAlumno.length==0">Sin Alumnos Ingresados.</h5>
+                      <nav *ngIf="listAlumno.length>0" aria-label="Page navigation example">
                         <ul class="pagination  justify-content-center">
                           <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
                           <li class="page-item"><a class="page-link" href="#">1</a></li>

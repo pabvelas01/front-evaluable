@@ -1,15 +1,18 @@
 export class Alumno{
-    id?: number;
+    _id?: string;
     nombre?: String;
     primer_apellido: String;
     segundo_apellido: String;
-    carrera: Object
+    carrera: string;
+    sexo: string;
 
-    constructor(nombre: String,primer_apellido: String,segundo_apellido: String, carrera: Object){
-        this.nombre=nombre,
-        this.primer_apellido=primer_apellido,
-        this.segundo_apellido=segundo_apellido,
-        this.carrera=carrera
+    constructor(nombre: String,primer_apellido: String,segundo_apellido: String, carrera: string,
+        sexo : string){
+        this.nombre=nombre;
+        this.primer_apellido=primer_apellido;
+        this.segundo_apellido=segundo_apellido;
+        this.carrera=carrera;
+        this.sexo=sexo;
     }
     
 }

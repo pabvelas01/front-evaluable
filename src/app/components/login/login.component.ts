@@ -12,7 +12,7 @@ import {Router} from "@angular/router"
 export class LoginComponent implements OnInit {
 
   autentificacionForm:FormGroup;
-  constructor(private autentificacionServise:AutentificacionService,
+  constructor(private autentificacionService:AutentificacionService,
     private toastr: ToastrService,
     private router: Router,
     private fb:FormBuilder) { 
@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
   }
 
   autentificar(email:string,pass:string){
-    this.autentificacionServise.setEmailPass(email,pass);
-    this.autentificacionServise.setAutentificar().subscribe(
+    this.autentificacionService.setEmailPass(email,pass);
+    this.autentificacionService.setAutentificar().subscribe(
       data=>{
         console.log(data);
         this.toastr.success(data.msg, 'Éxito');

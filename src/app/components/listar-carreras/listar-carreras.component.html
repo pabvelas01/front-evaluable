@@ -39,7 +39,7 @@
                           <td>{{carrera.nombre}}</td>
                           <td>{{carrera.nomenclatura}}</td>
                           <td class="text-center"> 
-                                <button type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button [routerLink]="['/editar-carrera',carrera._id]" type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button (click)="eliminarCarrera(carrera._id)" type="button" class="btn btn-sm btn-danger m-1"><i class="fa-solid fa-trash"></i></button>
                                
                           </td>

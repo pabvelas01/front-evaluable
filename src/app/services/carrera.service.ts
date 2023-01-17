@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Carrera } from '../models/carrera';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class CarreraService {
     
   }
   setCarreraHttp(): Observable <any>{
-    return this.http.post(this.url ,{carrera:this.carrera,nomenclatura:this.nomenclatura});
+    return this.http.post(this.url ,{nombre:this.carrera,nomenclatura:this.nomenclatura});
   }
   
   getCarreras(): Observable <any> {
@@ -31,4 +32,19 @@ export class CarreraService {
   eliminarCarrera(id:any): Observable<any>{
     return this.http.delete(this.url + id)
   }
+
+  guardarCarrera(carrera: Carrera): Observable<any>{
+    return this.http.post(this.url,this.carrera);
+  }
+
+  obtenerCarrera(id:string): Observable<any>{
+    return this.http.get(this.url + id)
+  }
+
+  editarCarrera(id:any,carrera: Carrera): Observable<any>{
+    return this.http.put(this.url+id , carrera);
+  }
+
+  
+
 }

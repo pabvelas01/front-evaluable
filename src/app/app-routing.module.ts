@@ -19,6 +19,7 @@ const routes: Routes =
   { path: 'administrar-carrera', component: CarreraComponent },
   { path: 'editar-carrera/:id', component: CarreraComponent },
   { path: 'administrar-alumno', component: AlumnoComponent },
+  { path: 'editar-alumno/:id', component: AlumnoComponent },
  // { path: '**', redirectTo:'', pathMatch:'full' }, /*** Para retornar a la principal cuando url no hace match con nada */
 ];
 

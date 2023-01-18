@@ -3,34 +3,42 @@
         <div class="col-lg-6 offset-lg-3 mt-5">
             <div class="card">
                 <div class="card-body text-center">
-                    <h5 class="card-title text-primary text-start mb-5">Crear Alumno</h5>
+                    <h5 class="card-title text-primary text-start mb-5">{{titulo}}</h5>
                     <form [formGroup]="administrarAlumnoForm" (ngSubmit)="ingresarAlumno()">   
                     <div class="form-floating mb-3">
-                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Nombre carrera">
+                        <input type="text" formControlName="nombre" class="form-control" id="floatingInput" placeholder="Nombre carrera">
                         <label for="floatingInput">Nombre Alumno</label>
                       </div>
                     <div class="form-floating mb-3">
-                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Nomenclatura">
+                        <input type="text" formControlName="primer_apellido" class="form-control" id="floatingInput" placeholder="Nomenclatura">
                         <label for="floatingInput">Primer Apellido</label>
                       </div>
 
                     <div class="form-floating mb-3">
-                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Nomenclatura">
+                        <input type="text" formControlName="segundo_apellido" class="form-control" id="floatingInput" placeholder="Nomenclatura">
                         <label for="floatingInput">Segundo Apellido</label>
                       </div>
 
                     <div class="form-floating mb-3">
-                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Nomenclatura">
+                      <select formControlName="sexo" class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione...</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                      </select>
                         <label for="floatingInput">Sexo</label>
                       </div>
 
                     <div class="form-floating mb-3">
-                        <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Nomenclatura">
-                        <label for="floatingInput">Carrera</label>
+                      <select formControlName="carrera" class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione...</option>
+                        <option *ngFor="let carrera of listCarrera"  value="{{carrera.nombre}}">{{carrera.nombre}}</option>
+                        
+                      </select>  
+                      <label for="floatingInput">Carrera</label>
                       </div>
                      
-                      <button type="submit" routerLink="/mantenedor-alumno" class="btn btn-success btn-lg float-start" >Volver <i class="fa-solid fa-left-long"></i> </button>
-                      <button type="submit" class="btn btn-primary btn-lg float-end" >Guardar <i class="fa-solid fa-floppy-disk"></i> </button>
+                      <button type="button" routerLink="/mantenedor-alumno" class="btn btn-success btn-lg float-start" >Volver <i class="fa-solid fa-left-long"></i> </button>
+                      <button type="submit" class="btn btn-primary btn-lg float-end" >{{accion}} <i class="fa-solid fa-floppy-disk"></i> </button>
                       </form>
                 </div>
             </div>

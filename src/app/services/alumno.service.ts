@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Alumno } from '../models/alumno';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,17 @@ export class AlumnoService {
 
   eliminarAlumno(id:any): Observable<any>{
     return this.http.delete(this.url + id)
+  }
+
+  guardarAlumno(alumno: Alumno): Observable<any>{
+    return this.http.post(this.url,alumno);
+  }
+
+  obtenerAlumno(id:string): Observable<any>{
+    return this.http.get(this.url + id)
+  }
+
+  editarAlumno(id:any,alumno: Alumno): Observable<any>{
+    return this.http.put(this.url+id , alumno);
   }
 }

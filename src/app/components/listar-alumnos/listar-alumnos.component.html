@@ -20,7 +20,7 @@
                     <div class="mb-3">
                       <label for="carrera">Carrera</label>
                       <select formControlName="carrera" class="form-select" aria-label="Default select example">
-                        <option selected>Todas</option>
+                        <option selected value="">Todas</option>
                         <option *ngFor="let carrera of listCarrera"  value="{{carrera.nombre}}">{{carrera.nombre}}</option>
                         
                       </select>  

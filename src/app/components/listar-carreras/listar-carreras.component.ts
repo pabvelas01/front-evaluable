@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Carrera } from 'src/app/models/carrera';
@@ -13,10 +14,16 @@ export class ListarCarrerasComponent implements OnInit {
   @Input() Editable: boolean=false;
   listCarrera: Carrera[]=[];
   id: string | null;
+  queryForm:FormGroup;
   constructor(private router: Router,
     private carreraService:CarreraService,
     private toastr: ToastrService,
+    private fb:FormBuilder,
     private aRouter: ActivatedRoute) {
+      this.queryForm=this.fb.group({
+        nombre: ['',Validators.nullValidator],
+        nomenclatura: ['',Validators.nullValidator],
+      });
       this.id= this.aRouter.snapshot.paramMap.get("id");
      }
 
@@ -50,6 +57,18 @@ export class ListarCarrerasComponent implements OnInit {
   editarCarrera(id:any){
     console.log("/administrar-carrera/"+id)
     this.router.navigate(["/administrar-carrera/"+id])
+  }
+
+  buscar(){
+    let nombre=this.queryForm.get("nombre")?.value;
+    let nomenclatura=this.queryForm.get("nomenclatura")?.value;
+    let struct={nombre:nombre, nomenclatura:nomenclatura}
+    this.carreraService.getCarrerasQuery(struct).subscribe(data=>{
+      this.listCarrera=data;
+    },
+      error=>{
+
+      })
   }
 
   

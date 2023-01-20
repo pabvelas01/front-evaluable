@@ -8,8 +8,11 @@ import { Alumno } from '../models/alumno';
 })
 export class AlumnoService {
   url_local ="http://localhost:4000/api/alumno/";
+  url_local_query ="http://localhost:4000/api/alumno-query/";
   url_aws ="https://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/alumno/";
+  url_aws_query ="https://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/alumno-query/";
   url=this.url_aws;
+  url_query=this.url_aws_query;
   nombre:string='';
   primer_apellido:string='';  
   segundo_apellido:string='';  
@@ -29,6 +32,10 @@ export class AlumnoService {
   
   getAlumnos(): Observable <any> {
     return this.http.get(this.url);
+  }
+
+  getAlumnosQuery(objeto:any): Observable <any> {
+    return this.http.post(this.url_query,objeto);
   }
 
   eliminarAlumno(id:any): Observable<any>{

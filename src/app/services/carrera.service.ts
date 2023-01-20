@@ -8,8 +8,11 @@ import { Carrera } from '../models/carrera';
 })
 export class CarreraService {
   url_local ="http://localhost:4000/api/carrera/";
+  url_local_query ="http://localhost:4000/api/carrera-query/";
   url_aws ="https://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/carrera/";
+  url_aws_query ="https://ec2-44-212-20-191.compute-1.amazonaws.com:4000/api/carrera-query/";
   url=this.url_aws;
+  url_query=this.url_aws_query;
   carrera:string='';
   nomenclatura:string='';  
   constructor(private http: HttpClient) { 
@@ -27,6 +30,10 @@ export class CarreraService {
   
   getCarreras(): Observable <any> {
     return this.http.get(this.url);
+  }
+
+  getCarrerasQuery(objeto:any): Observable <any> {
+    return this.http.post(this.url_query,objeto);
   }
 
   eliminarCarrera(id:any): Observable<any>{

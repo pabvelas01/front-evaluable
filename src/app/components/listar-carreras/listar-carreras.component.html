@@ -7,13 +7,17 @@
             <h4 class="card-title col-6 offset-4 mb-5 text-primary"><strong>Filtros de Búsqueda Carrera</strong>
                
             </h4>
-            <form class="col-lg-8 offset-2">
+            <form class="col-lg-8 offset-2" [formGroup]="queryForm" (ngSubmit)="buscar()">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Alcance de Nombre Carrera</label>
-                    <input type="text" class="form-control form-control-sm" id="nombre" placeholder="">
+                    <input formControlName="nombre" type="text" class="form-control form-control-sm" id="nombre" placeholder="">
+                  </div>
+                <div class="mb-3">
+                    <label for="nomenclatura" class="form-label">Alcance de Nomenclatura Carrera</label>
+                    <input formControlName="nomenclatura" type="text" class="form-control form-control-sm" id="nomenclatura" placeholder="">
                   </div>
                 <div class="text-center">
-                  <button class="btn btn-primary btn-md  col-lg-5"><strong>Filtrar <i class="fa-solid fa-magnifying-glass"></i></strong></button>
+                  <button type="submit" class="btn btn-primary btn-md  col-lg-5"><strong>Filtrar <i class="fa-solid fa-magnifying-glass"></i></strong></button>
                 </div>
 
             </form>
@@ -48,8 +52,8 @@
                        
                       </tbody>
                   </table>
-                  <h5 class="text-align-center" *ngIf="listCarrera.length==0">Sin Carreras Ingresadas.</h5>
-                  <nav *ngIf="listCarrera.length>0" aria-label="Page navigation example">
+                  <h5 class="text-align-center" *ngIf="listCarrera.length==0">Sin Resultados.</h5>
+                  <nav *ngIf="false" aria-label="Page navigation example">
                     <ul class="pagination  justify-content-center">
                       <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
                       <li class="page-item"><a class="page-link" href="#">1</a></li>

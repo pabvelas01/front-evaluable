@@ -82,7 +82,7 @@ export class AdministarAlumnoComponent implements OnInit {
 
     editarAlumno(){
       const ALUMNO: Alumno={
-        nombre:this.administrarAlumnoForm.get("carrera")?.value,
+        nombre:this.administrarAlumnoForm.get("nombre")?.value,
         primer_apellido:this.administrarAlumnoForm.get("primer_apellido")?.value,
         segundo_apellido:this.administrarAlumnoForm.get("segundo_apellido")?.value,
         sexo:this.administrarAlumnoForm.get("sexo")?.value,
@@ -104,9 +104,6 @@ export class AdministarAlumnoComponent implements OnInit {
     ingresarAlumnoCrear(){
       let nombre=this.administrarAlumnoForm.get("nombre")?.value;
        let primer_apellido=this.administrarAlumnoForm.get("primer_apellido")?.value;
-      let  segundo_apellido=this.administrarAlumnoForm.get("segundo_apellido")?.value;
-      let  sexo=this.administrarAlumnoForm.get("sexo")?.value;
-      let   carrera=this.administrarAlumnoForm.get("carrera")?.value;
       const ALUMNO: Alumno={
         nombre:this.administrarAlumnoForm.get("nombre")?.value,
         primer_apellido:this.administrarAlumnoForm.get("primer_apellido")?.value,

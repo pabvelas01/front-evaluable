@@ -4,21 +4,30 @@
             <div class="card-body">
                 <button *ngIf="Editable==true" class="btn btn-primary float-end" routerLink="/administrar-alumno">Crear Alumno</button>
                 <h4 class="card-title text-center text-primary"><strong>Filtros de Búsqueda Alumno</strong></h4>
-                <form class="col-lg-8 offset-2">
+                <form class="col-lg-8 offset-2" [formGroup]="queryForm" (ngSubmit)="buscar()">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombres</label>
-                        <input type="email" class="form-control form-control-sm" id="nombre" placeholder="">
+                        <input formControlName="nombre" type="text" class="form-control form-control-sm" id="nombre" placeholder="">
                       </div>
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Apellidos</label>
-                        <input type="email" class="form-control form-control-sm" id="nombre" placeholder="">
+                        <label for="nombre" class="form-label">Primer Apellido</label>
+                        <input formControlName="primer_apellido" type="text" class="form-control form-control-sm" id="nombre" placeholder="">
                       </div>
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Carrera</label>
-                        <input type="email" class="form-control form-control-sm" id="nombre" placeholder="">
+                        <label for="nombre" class="form-label">Segundo Apellido</label>
+                        <input formControlName="segundo_apellido" type="text" class="form-control form-control-sm" id="nombre" placeholder="">
+                      </div>
+                    <div class="mb-3">
+                      <label for="carrera">Carrera</label>
+                      <select formControlName="carrera" class="form-select" aria-label="Default select example">
+                        <option selected>Todas</option>
+                        <option *ngFor="let carrera of listCarrera"  value="{{carrera.nombre}}">{{carrera.nombre}}</option>
+                        
+                      </select>  
+                      
                       </div>
                       <div class="text-center">
-                        <button class="btn btn-primary btn-md  col-lg-5"><strong>Filtrar <i class="fa-solid fa-magnifying-glass"></i></strong></button>
+                        <button type="submit" class="btn btn-primary btn-md  col-lg-5"><strong>Filtrar <i class="fa-solid fa-magnifying-glass"></i></strong></button>
                       </div>
 
                 </form>
@@ -57,8 +66,8 @@
                            
                           </tbody>
                       </table>
-                      <h5 class="text-align-center" *ngIf="listAlumno.length==0">Sin Alumnos Ingresados.</h5>
-                      <nav *ngIf="listAlumno.length>0" aria-label="Page navigation example">
+                      <h5 class="text-align-center" *ngIf="listAlumno.length==0">Sin Resultados.</h5>
+                      <nav *ngIf="false" aria-label="Page navigation example">
                         <ul class="pagination  justify-content-center">
                           <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
                           <li class="page-item"><a class="page-link" href="#">1</a></li>
